@@ -11,7 +11,6 @@ export const HttpController = <T extends BaseHttpController>() => {
         const server = HttpContext.getServer();
         const instance = new factory();
         Object.entries(metadataList).map(([_key, metadata]) => {
-            console.log("metadata", metadata);
             const handle = getHttpHandle(server, metadata.method);
             const key = metadata.handlerName;
             const handler = instance[key] as Function;
