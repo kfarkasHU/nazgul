@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "strict": true,
+        "strictNullChecks": true,
+        "esModuleInterop": true,
+        "target": "ES2017",
+        "lib": ["ES2017"],
+        "moduleResolution": "NodeNext",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "CommonJS",
+        "plugins": [
+            {
+                "transform": "typescript-rtti/dist/transformer"
+            }
+        ]
+    }
+}
