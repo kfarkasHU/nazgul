@@ -1,5 +1,7 @@
 import { Application } from "express";
-import { BaseHttpController, HttpContext, HttpHandler, HttpHandles } from "../http";
+import { BaseHttpController, HttpHandles } from "@kfarkashu/nazgul.core";
+
+import { HttpContext, } from "../http";
 
 export const HttpController = <T extends BaseHttpController>() => {
     return (
