@@ -1,5 +1,17 @@
 {
     "name": "@kfarkashu/nazgul.server",
     "version": "1.0.0",
-    "license": "MIT"
+    "license": "MIT",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/esm/index.js",
+            "import": "./dist/esm/index.js",
+            "types": "./dist/esm/index.d.ts"
+        }
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json"
+    }
 }

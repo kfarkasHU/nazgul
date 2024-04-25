@@ -1,4 +1,4 @@
-import { BaseHttpController } from "@kfarkashu/nazgul.core";
+import { BaseHttpController, HttpHandler } from "@kfarkashu/nazgul.core";
 
 export const ProducesResponse = <T>(
     code: number,
@@ -11,10 +11,11 @@ export const ProducesResponse = <T>(
         if (!target.__handleCandidates) {
             target.__handleCandidates = {}
         }
+        const handle = (target.__handleCandidates[property.toString()] || {}) as HttpHandler<U>;
         target.__handleCandidates[property.toString()] = {
-            ...(target.__handleCandidates[property.toString()] || {}),
+            ...handle,
             responses: {
-                ...(target.__handleCandidates[property.toString()] || {})?.responses,
+                ...handle?.responses,
                 [code]: {
                     responseContentType: contentType,
                     payload: {

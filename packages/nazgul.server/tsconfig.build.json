@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "declaration": true,
+      "outDir": "dist/esm"
+    },
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "**/*.spec.ts"
+    ],
+    "strict": true,
+    "strictNullChecks": true,
+}

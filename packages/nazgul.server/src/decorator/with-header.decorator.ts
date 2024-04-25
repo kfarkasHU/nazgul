@@ -1,4 +1,4 @@
-import { BaseHttpController } from "@kfarkashu/nazgul.core";
+import { BaseHttpController, HttpHandler } from "@kfarkashu/nazgul.core";
 
 export const WithHeader = (
     headerName: string,
@@ -12,10 +12,11 @@ export const WithHeader = (
         if (!target.__handleCandidates) {
             target.__handleCandidates = {}
         }
+        const handle = (target.__handleCandidates[property.toString()] || {}) as HttpHandler<U>;
         target.__handleCandidates[property.toString()] = {
-            ...(target.__handleCandidates[property.toString()] || {}),
+            ...handle,
             headerParams: [
-                ...(target.__handleCandidates[property.toString()] || {})?.headerParams,
+                ...handle.headerParams,
                 {
                     name: headerName,
                     type: headerType,

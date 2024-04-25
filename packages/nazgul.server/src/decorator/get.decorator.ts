@@ -1,4 +1,4 @@
-import { BaseHttpController } from "@kfarkashu/nazgul.core";
+import { BaseHttpController, HttpHandler, HttpHandles } from "@kfarkashu/nazgul.core";
 
 export const HttpGet = (
     path: string,
@@ -23,8 +23,10 @@ export const HttpGet = (
             }))
         ;
 
+        const handle = (target.__handleCandidates[property.toString()] || {}) as HttpHandler<U>;
+
         target.__handleCandidates[property.toString()] = {
-            ...(target.__handleCandidates[property.toString()] || {}),
+            ...handle,
             path: path,
             method: "GET",
             handlerName: property,
