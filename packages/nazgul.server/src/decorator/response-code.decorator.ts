@@ -17,7 +17,10 @@ export const ProducesResponse = <T>(
                 ...(target.__handleCandidates[property.toString()] || {})?.responses,
                 [code]: {
                     responseContentType: contentType,
-                    payload: "kiscica"
+                    payload: {
+                        type: "complex",
+                        properties: []
+                    }
                 }
             }
         }

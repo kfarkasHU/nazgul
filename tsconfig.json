@@ -1,5 +1,11 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@kfarkashu/*": [
+                "packages/*/src/index.ts"
+            ]
+        },
         "outDir": "dist",
         "strict": true,
         "strictNullChecks": true,

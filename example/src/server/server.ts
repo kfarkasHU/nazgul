@@ -1,5 +1,5 @@
 import express from "express";
-import { HttpContext } from "../http";
+import { HttpContext } from "@kfarkashu/nazgul.server";
 
 const server = express()
 HttpContext.setServer(server);
