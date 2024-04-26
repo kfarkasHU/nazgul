@@ -1,5 +1,5 @@
 import { NextFunction, Response, Request } from "express";
-import { HttpController, HttpGet, ProducesResponse } from "@kfarkashu/nazgul.server";
+import { HttpController, HttpGet, ProducesResponse } from "@kfarkashu/nazgul.hub";
 import { BaseHttpController } from "@kfarkashu/nazgul.core";
 
 import { HEALTH_ENDPOINTS } from "./health.const";

@@ -1,11 +1,12 @@
 import { BaseHttpController } from "@kfarkashu/nazgul.core";
-import { HttpController, HttpDelete, HttpGet, HttpPost, HttpPut } from "@kfarkashu/nazgul.server";
-import { ECHO_API_ENDPOINTS } from "./echo.const";
+import { HttpController, HttpDelete, HttpGet, HttpPost, HttpPut } from "@kfarkashu/nazgul.hub";
 import {
     Request,
     Response, 
     NextFunction
 } from "express";
+
+import { ECHO_API_ENDPOINTS } from "./echo.const";
 
 @HttpController(
     "echo",
