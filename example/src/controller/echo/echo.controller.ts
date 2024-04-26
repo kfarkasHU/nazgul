@@ -7,7 +7,10 @@ import {
     NextFunction
 } from "express";
 
-@HttpController(ECHO_API_ENDPOINTS.controllerBase)
+@HttpController(
+    "echo",
+    ECHO_API_ENDPOINTS.controllerBase
+)
 export class EchoController extends BaseHttpController {
 
     @HttpGet(ECHO_API_ENDPOINTS.get)

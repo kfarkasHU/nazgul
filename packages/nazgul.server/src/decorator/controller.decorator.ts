@@ -3,7 +3,10 @@ import { BaseHttpController, HttpHandles } from "@kfarkashu/nazgul.core";
 
 import { HttpContext, } from "../http";
 
-export const HttpController = <T extends BaseHttpController>(path?: string) => {
+export const HttpController = <T extends BaseHttpController>(
+    tag: string,
+    path?: string
+) => {
     return (
         factory: { new (): T }
     ) => {
