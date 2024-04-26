@@ -1,3 +1,4 @@
 export const HEALTH_ENDPOINTS = {
-    health: "/api/v1/health"
+    controllerBase: "/api/v1/health",
+    health: ""
 }

@@ -3,7 +3,7 @@ import { BaseHttpController, HttpHandles } from "@kfarkashu/nazgul.core";
 
 import { HttpContext, } from "../http";
 
-export const HttpController = <T extends BaseHttpController>() => {
+export const HttpController = <T extends BaseHttpController>(path?: string) => {
     return (
         factory: { new (): T }
     ) => {
@@ -14,8 +14,11 @@ export const HttpController = <T extends BaseHttpController>() => {
             const handle = getHttpHandle(server, metadata.method);
             const key = metadata.handlerName;
             const handler = instance[key] as Function;
+            const handlePath = path
+                ? `${path}${metadata.path}`
+                : metadata.path
             handle(
-                metadata.path,
+                handlePath,
                 (req, res, next) => handler.apply(instance, [req, res, next])
             );
         });
