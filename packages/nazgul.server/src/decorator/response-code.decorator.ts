@@ -1,13 +1,17 @@
 import { BaseHttpController, HttpHandler } from "@kfarkashu/nazgul.core";
+import { NazgulGenerator } from "@kfarkashu/nazgul.generator";
+import { CallSite } from "typescript-rtti";
 
 export const ProducesResponse = <T>(
     code: number,
-    contentType = "application/json"
+    contentType = "application/json",
+    callsite?: CallSite
 ) => {
     return <U extends BaseHttpController>(
         target: U,
         property: keyof U
     ) => {
+        const metadata = NazgulGenerator.generateMetadataFor<T>(callsite)
         if (!target.__handleCandidates) {
             target.__handleCandidates = {}
         }
@@ -20,7 +24,7 @@ export const ProducesResponse = <T>(
                     responseContentType: contentType,
                     payload: {
                         type: "complex",
-                        properties: []
+                        properties: {}
                     }
                 }
             }

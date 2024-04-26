@@ -4,21 +4,24 @@ interface BaseProperty {
 
 export interface PropertyDescriptor extends BaseProperty {
     type: "primitive";
-    name: string;
+    propertyType: string;
     format: string;
-    isNullable: string;
+    isNullable: boolean;
 }
 
 export type Property = PropertyDescriptor | ObjectDescriptor | ArrayDescriptor
-
 
 export interface ArrayDescriptor extends BaseProperty {
     type: "array";
     items: Property;
 }
 
+interface PropertyMap {
+    [key: string]: Property;
+}
+
 export interface ObjectDescriptor extends BaseProperty {
     type: "complex";
-    properties: Array<Property>;
+    properties: PropertyMap
 }
 
