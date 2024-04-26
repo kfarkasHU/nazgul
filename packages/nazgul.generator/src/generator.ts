@@ -4,7 +4,13 @@ import { CallSite, ReflectedTypeRef, reflect } from "typescript-rtti";
 export namespace NazgulGenerator {
 
     export function generateMetadataFor<T>(callsite?: CallSite): Property {
-        const reflection = reflect(callsite!);
+        if (!callsite) {
+            return {
+                type: "complex",
+                properties: {}
+            }
+        }
+        const reflection = reflect(callsite);
         const type = reflection.typeParameters[0];
         if (!["object", "interface"].includes(type.kind)) {
             throw `E_NOTSUPPORTED_KIND`;
