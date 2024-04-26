@@ -3,7 +3,7 @@ import { CallSite, ReflectedTypeRef, reflect } from "typescript-rtti";
 
 export namespace NazgulGenerator {
 
-    export function generateMetadataFor<T>(callsite?: CallSite): Property {
+    export function generateMetadataFor<_T>(callsite?: CallSite): Property {
         if (!callsite) {
             return {
                 type: "complex",
