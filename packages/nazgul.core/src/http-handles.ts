@@ -7,7 +7,7 @@ export interface HttpHandles<T> {
 export interface HttpHandler<T> {
     path: string;
     handlerName: keyof T;
-    method: "GET" | "POST";
+    method: "GET" | "POST" | "PUT" | "DELETE";              // TODO: Enum for this
     responses: HttpResponses;
     pathParams: Array<ParameterDescriptor>;
     queryParams: Array<ParameterDescriptor>;

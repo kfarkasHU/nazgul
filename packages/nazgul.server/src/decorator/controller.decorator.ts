@@ -31,6 +31,8 @@ function getHttpHandle(
 ) {
     switch(method) {
         case "POST": return server.post.bind(server);
+        case "DELETE": return server.delete.bind(server);
+        case "PUT": return server.put.bind(server);
         default: return server.get.bind(server);
     }
 }
