@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "outDir": "dist",
+      "plugins": [
+        {
+            "transform": "typescript-rtti/dist/transformer"
+        }
+      ],
+      "strict": true,
+      "strictNullChecks": true,
+    },
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "**/*.spec.ts"
+    ]
+}
