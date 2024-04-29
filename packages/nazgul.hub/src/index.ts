@@ -1,3 +1,4 @@
+import "reflect-metadata"
 export * from "./hub";
 export * from "./decorator";
 export * from "./http";
