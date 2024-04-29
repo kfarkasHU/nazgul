@@ -1,0 +1,7 @@
+{
+    "tsconfigPath": "tsconfig.json",
+    "entry": "src/index.ts",
+    "outDir": ".nazgul",
+    "swaggerOutPath": "docs/api.json",
+    "entryDist": "index.js"
+}
