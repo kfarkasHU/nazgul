@@ -22,7 +22,15 @@ export const HttpController = <T extends BaseHttpController>(
                 : metadata.path
             handle(
                 handlePath,
-                (req, res, next) => handler.apply(instance, [req, res, next])
+                async (req, res, next) => {
+                    for (const filter of metadata.filters) {
+                        const result = await filter(req, res, next)
+                        if (!result) {
+                            return;
+                        }
+                    }
+                    handler.apply(instance, [req, res, next])
+                }
             );
         });
     }

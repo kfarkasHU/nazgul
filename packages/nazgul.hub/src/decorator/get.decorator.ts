@@ -27,6 +27,7 @@ export const HttpGet = (
 
         target.__handleCandidates[property.toString()] = {
             ...handle,
+            filters: (handle?.filters || []),
             path: path,
             method: "GET",
             handlerName: property,

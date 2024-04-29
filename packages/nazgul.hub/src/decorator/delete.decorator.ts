@@ -27,6 +27,7 @@ export const HttpDelete = (
 
         target.__handleCandidates[property.toString()] = {
             ...handle,
+            filters: (handle?.filters || []),
             path: path,
             method: "DELETE",
             handlerName: property,

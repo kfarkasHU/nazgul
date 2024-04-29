@@ -27,6 +27,7 @@ export const HttpPost = <T>(
 
         target.__handleCandidates[property.toString()] = {
             ...handle,
+            filters: (handle?.filters || []),
             path: path,
             method: "POST",
             handlerName: property,

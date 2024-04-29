@@ -27,6 +27,7 @@ export const HttpPut = <T>(
 
         target.__handleCandidates[property.toString()] = {
             ...handle,
+            filters: (handle?.filters || []),
             path: path,
             method: "PUT",
             handlerName: property,
