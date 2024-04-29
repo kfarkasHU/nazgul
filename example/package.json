@@ -6,6 +6,7 @@
         "dev": "ts-node src/index.ts"
     },
     "dependencies": {
+        "nazgul.cli": "*",
         "nazgul.hub": "*",
         "nazgul.core": "*",
         "nazgul.generator": "*"
