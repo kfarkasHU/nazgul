@@ -1,7 +1,7 @@
 import express from "express";
-import { HttpContext, NazgulHub } from "@kfarkashu/nazgul.hub";
-import { NazgulApidocPlugin } from "@kfarkashu/nazgul.apidoc";
-import { NazgulRoutingPlugin } from "@kfarkashu/nazgul.routing";
+import { HttpContext, NazgulHub } from "nazgul.hub";
+import { NazgulApidocPlugin } from "nazgul.apidoc";
+import { NazgulRoutingPlugin } from "nazgul.routing";
 
 const server = express()
 
@@ -12,7 +12,7 @@ NazgulHub
 ;
 
 import "../controller";
-import {  } from "@kfarkashu/nazgul.hub";
+import {  } from "nazgul.hub";
 
 server.listen(9000, () => {
     const routes = HttpContext

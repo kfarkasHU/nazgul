@@ -1,5 +1,5 @@
-import { BaseHttpController } from "@kfarkashu/nazgul.core";
-import { HttpController, HttpDelete, HttpGet, HttpPost, HttpPut } from "@kfarkashu/nazgul.hub";
+import { BaseHttpController } from "nazgul.core";
+import { HttpController, HttpDelete, HttpGet, HttpPost, HttpPut } from "nazgul.hub";
 import {
     Request,
     Response, 

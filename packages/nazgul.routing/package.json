@@ -1,5 +1,5 @@
 {
-    "name": "@kfarkashu/nazgul.routing",
+    "name": "nazgul.routing",
     "version": "1.0.0",
     "license": "MIT",
     "module": "./dist/esm/index.js",

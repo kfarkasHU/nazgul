@@ -1,4 +1,4 @@
-import { BaseHttpController, HttpHandler } from "@kfarkashu/nazgul.core";
+import { BaseHttpController, HttpHandler } from "nazgul.core";
 
 export const WithHeader = (
     headerName: string,

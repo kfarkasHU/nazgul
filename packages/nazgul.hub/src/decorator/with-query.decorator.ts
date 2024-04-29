@@ -1,4 +1,4 @@
-import { BaseHttpController, HttpHandler } from "@kfarkashu/nazgul.core";
+import { BaseHttpController, HttpHandler } from "nazgul.core";
 
 export const WithQuery = <T>() => {
     return <U extends BaseHttpController>(

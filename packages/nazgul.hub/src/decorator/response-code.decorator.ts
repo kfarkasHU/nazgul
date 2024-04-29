@@ -1,5 +1,5 @@
-import { BaseHttpController, HttpHandler } from "@kfarkashu/nazgul.core";
-import { NazgulGenerator } from "@kfarkashu/nazgul.generator";
+import { BaseHttpController, HttpHandler } from "nazgul.core";
+import { NazgulGenerator } from "nazgul.generator";
 import { CallSite } from "typescript-rtti";
 
 export const ProducesResponse = <T>(

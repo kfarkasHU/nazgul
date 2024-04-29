@@ -1,4 +1,4 @@
-import { BaseHttpController, HttpHandler, HttpHandles } from "@kfarkashu/nazgul.core";
+import { BaseHttpController, HttpHandler, HttpHandles } from "nazgul.core";
 
 export const HttpPost = <T>(
     path: string,

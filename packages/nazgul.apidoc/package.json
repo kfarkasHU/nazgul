@@ -1,5 +1,5 @@
 {
-    "name": "@kfarkashu/nazgul.apidoc",
+    "name": "nazgul.apidoc",
     "version": "1.0.0",
     "license": "MIT",
     "module": "./dist/esm/index.js",

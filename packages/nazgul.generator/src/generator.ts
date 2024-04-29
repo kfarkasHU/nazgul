@@ -1,4 +1,4 @@
-import { Property } from "@kfarkashu/nazgul.core";
+import { Property } from "nazgul.core";
 import { CallSite, ReflectedTypeRef, reflect } from "typescript-rtti";
 
 export namespace NazgulGenerator {

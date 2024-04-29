@@ -1,4 +1,4 @@
-import { BaseHttpController, HttpHandler, INazgulFilterAttribute } from "@kfarkashu/nazgul.core";
+import { BaseHttpController, HttpHandler, INazgulFilterAttribute } from "nazgul.core";
 import { Request, Response, NextFunction } from "express";
 
 export class FilterAttributeFactory {

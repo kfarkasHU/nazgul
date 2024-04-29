@@ -1,4 +1,4 @@
-import { FilterAttributeFactory } from "@kfarkashu/nazgul.routing";
+import { FilterAttributeFactory } from "nazgul.routing";
 
 export const Authorize = (token: string) => FilterAttributeFactory.create(
     (req, res, _next) => {

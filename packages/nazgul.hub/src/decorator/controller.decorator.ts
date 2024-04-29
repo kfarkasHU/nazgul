@@ -1,5 +1,5 @@
 import { Application } from "express";
-import { BaseHttpController, HttpHandles } from "@kfarkashu/nazgul.core";
+import { BaseHttpController, HttpHandles } from "nazgul.core";
 
 import { HttpContext, } from "../http";
 

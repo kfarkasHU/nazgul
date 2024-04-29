@@ -1,4 +1,4 @@
-import { INazgulPlugin } from "@kfarkashu/nazgul.core";
+import { INazgulPlugin } from "nazgul.core";
 
 export class NazgulRoutingPlugin implements INazgulPlugin {
 

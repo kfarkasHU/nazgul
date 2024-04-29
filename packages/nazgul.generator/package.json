@@ -1,5 +1,5 @@
 {
-    "name": "@kfarkashu/nazgul.generator",
+    "name": "nazgul.generator",
     "version": "1.0.0",
     "license": "MIT",
     "module": "./dist/index.js",
@@ -18,7 +18,7 @@
         "postgenerate": "ttsc -p tsconfig.generate.json"
     },
     "dependencies": {
-        "@kfarkashu/nazgul.core": "*"
+        "nazgul.core": "*"
     },
     "devDependencies": {
         "typescript-rtti": "0.9.6",

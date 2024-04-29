@@ -1,5 +1,5 @@
 {
-    "name": "@kfarkashu/nazgul.hub",
+    "name": "nazgul.hub",
     "version": "1.0.0",
     "license": "MIT",
     "module": "./dist/esm/index.js",

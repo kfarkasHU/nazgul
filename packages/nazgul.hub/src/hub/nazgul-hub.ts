@@ -1,4 +1,4 @@
-import { INazgulPlugin } from "@kfarkashu/nazgul.core";
+import { INazgulPlugin } from "nazgul.core";
 import { Application } from "express";
 
 import { PluginHub } from "../plugin";
