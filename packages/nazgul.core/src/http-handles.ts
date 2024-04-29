@@ -1,8 +1,11 @@
+import { Request, Response, NextFunction } from "express";
 import { ObjectDescriptor } from "./descriptor.model";
 
 export interface HttpHandles<T> {
     [key: string]: HttpHandler<T>
 }
+
+type HttpFilter = (req: Request, res: Response, next: NextFunction) => Promise<boolean> | boolean;
 
 export interface HttpHandler<T> {
     path: string;
@@ -13,6 +16,7 @@ export interface HttpHandler<T> {
     queryParams: Array<ParameterDescriptor>;
     headerParams: Array<ParameterDescriptor>;
     requestContentType: string;
+    filters: Array<HttpFilter>;
 }
 
 export interface HttpResponses {
