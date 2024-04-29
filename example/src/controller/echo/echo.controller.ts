@@ -6,6 +6,8 @@ import {
     NextFunction
 } from "express";
 
+import { Authorize } from "../../filter";
+
 import { ECHO_API_ENDPOINTS } from "./echo.const";
 
 @HttpController(
@@ -14,6 +16,7 @@ import { ECHO_API_ENDPOINTS } from "./echo.const";
 )
 export class EchoController extends BaseHttpController {
 
+    @Authorize("secret")
     @HttpGet(ECHO_API_ENDPOINTS.get)
     public echoGet(
         req: Request,

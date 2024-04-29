@@ -6,7 +6,7 @@
         "dev": "ts-node src/index.ts"
     },
     "dependencies": {
-        "@kfarkashu/nazgul.server": "*",
+        "@kfarkashu/nazgul.hub": "*",
         "@kfarkashu/nazgul.core": "*"
     }
 }

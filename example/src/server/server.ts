@@ -6,6 +6,7 @@ import { NazgulRoutingPlugin } from "@kfarkashu/nazgul.routing";
 const server = express()
 
 NazgulHub
+    .addServer(server)
     .usePlugin(new NazgulApidocPlugin())
     .usePlugin(new NazgulRoutingPlugin())
 ;
