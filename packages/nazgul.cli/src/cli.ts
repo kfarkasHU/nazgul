@@ -97,10 +97,14 @@ async function buildAndGenerate(): Promise<void> {
     }
 
     const runCommand = `node ${outDirAbsolute}/${configuration.entryDist}`;
-    const runner = exec(runCommand,);
+    const runner = exec(runCommand, (error, stdout, stderr) => {
+        error && console.log(error);
+        stdout && console.log(stdout);
+        stderr && console.log(stderr);
+    });
     const sleep = new Promise((resolve) => setTimeout(() => resolve(undefined), 2_000));        // TODO: Make the timeout configurable
     await sleep;
-    runner.kill('SIGINT');
+    runner.kill('SIGTERM');
 
     rmSync(outDirAbsolute, { recursive: true });
     rmSync(nazgulTsconfigPath);
