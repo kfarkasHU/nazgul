@@ -6,10 +6,7 @@ import {
     rmSync,
     writeFileSync
 } from "fs";
-import {
-    exec,
-    spawn
-} from "child_process";
+import { exec } from "child_process";
 
 const cwd = process.cwd();
 const configPath = toAbsolute("nazgul.config.json");
@@ -17,8 +14,7 @@ const defaultConfig = {
     tsconfigPath: "tsconfig.json",
     entry: 'src/index.ts',
     entryDist: 'index.js',
-    outDir: '.nazgul',
-    swaggerOutPath: 'docs/api.json',
+    outDir: '.nazgul'
 }
 
 let config = defaultConfig;
@@ -37,14 +33,12 @@ const configuration = {
     tsconfigPath: config.tsconfigPath || defaultConfig.tsconfigPath,
     entry: config.entry || defaultConfig.entry,
     outDir: config.outDir || defaultConfig.outDir,
-    swaggerOutPath: config.swaggerOutPath || defaultConfig.swaggerOutPath,
     entryDist: config.entryDist || defaultConfig.entryDist,
 }
 
 const tsconfigAbsolute = toAbsolute(configuration.tsconfigPath);
 const entryAbsolute = toAbsolute(configuration.entry);
 const outDirAbsolute = toAbsolute(configuration.outDir);
-const swaggerOutPathAbsolute = toAbsolute(configuration.swaggerOutPath);
 
 const nazgulTsconfigPath = toAbsolute("temp-tsconfig.nazgul.json");
 
