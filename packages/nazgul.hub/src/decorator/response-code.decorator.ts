@@ -22,10 +22,7 @@ export const ProducesResponse = <T>(
                 ...handle?.responses,
                 [code]: {
                     responseContentType: contentType,
-                    payload: {
-                        type: "complex",
-                        properties: {}
-                    }
+                    payload: metadata
                 }
             }
         }

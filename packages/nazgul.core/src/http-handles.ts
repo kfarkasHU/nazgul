@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { ObjectDescriptor } from "./descriptor.model";
+import { Property } from "./descriptor.model";
 
 export interface HttpHandles<T> {
     [key: string]: HttpHandler<T>
@@ -24,7 +24,7 @@ export interface HttpResponses {
 }
 
 export interface HttpResponsePayload {
-    payload: ObjectDescriptor;
+    payload: Property;
     responseContentType: string;
 }
 
