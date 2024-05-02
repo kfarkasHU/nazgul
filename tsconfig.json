@@ -2,8 +2,8 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@kfarkashu/*": [
-                "packages/*/src/index.ts"
+            "nazgul.*": [
+                "packages/nazgul.*/src/index.ts"
             ]
         },
         "outDir": "dist",

@@ -5,10 +5,7 @@ import { BaseHttpController } from "nazgul.core";
 import { HEALTH_ENDPOINTS } from "./health.const";
 import { ServerHealthV1Response } from "./health.model";
 
-@HttpController(
-    "health",
-    HEALTH_ENDPOINTS.controllerBase
-)
+@HttpController(HEALTH_ENDPOINTS.controllerBase)
 export class HealthController extends BaseHttpController {
 
     private readonly _applicationName = "@kfarkashu/nazgul";

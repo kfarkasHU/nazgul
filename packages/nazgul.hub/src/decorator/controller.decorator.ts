@@ -1,49 +1,13 @@
-import { Application } from "express";
 import { BaseHttpController, HttpHandles } from "nazgul.core";
 
-import { HttpContext, } from "../http";
+import { NazgulHub } from "../hub";
 
 export const HttpController = <T extends BaseHttpController>(
-    tag: string,
-    path?: string
+    path = ""
 ) => {
     return (
         factory: { new (): T }
     ) => {
-        const metadataList: HttpHandles<T> = factory.prototype["__handleCandidates"];
-        const server = HttpContext.getServer();
-        const instance = new factory();
-        Object.entries(metadataList).map(([_key, metadata]) => {
-            const handle = getHttpHandle(server, metadata.method);
-            const key = metadata.handlerName;
-            const handler = instance[key] as Function;
-            const handlePath = path
-                ? `${path}${metadata.path}`
-                : metadata.path
-            handle(
-                handlePath,
-                async (req, res, next) => {
-                    for (const filter of metadata.filters) {
-                        const result = await filter(req, res, next)
-                        if (!result) {
-                            return;
-                        }
-                    }
-                    handler.apply(instance, [req, res, next])
-                }
-            );
-        });
-    }
-}
-
-function getHttpHandle(
-    server: Application,
-    method: string
-) {
-    switch(method) {
-        case "POST": return server.post.bind(server);
-        case "DELETE": return server.delete.bind(server);
-        case "PUT": return server.put.bind(server);
-        default: return server.get.bind(server);
+        NazgulHub.runControllerPlugins(path, factory);
     }
 }

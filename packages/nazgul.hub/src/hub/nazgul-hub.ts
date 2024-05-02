@@ -1,4 +1,4 @@
-import { INazgulPlugin } from "nazgul.core";
+import { BaseHttpController, NazgulControllerPlugin } from "nazgul.core";
 import { Application } from "express";
 
 import { PluginHub } from "../plugin";
@@ -14,13 +14,20 @@ export class NazgulHub {
     }
 
     public static usePlugin(
-        plugin: INazgulPlugin
+        plugin: NazgulControllerPlugin
     ): typeof NazgulHub {
         const result = plugin.initialize();
         if (result) {
             PluginHub.addPlugin(plugin);
         }
         return this;
+    }
+
+    public static runControllerPlugins<T extends BaseHttpController>(
+        path: string,
+        controller: { new (): T }
+    ): void {
+        PluginHub.runControllers(path, controller)
     }
 
 }

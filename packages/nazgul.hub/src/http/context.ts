@@ -23,7 +23,7 @@ export class HttpContext {
         const routes: Array<AppRouteInfo> = [];
 
         const router: { stack: Array<{ route: { path: string, methods: object } }> } = this._server._router;
-        router.stack.forEach(m => {
+        router?.stack.forEach(m => {
             if (!m || !m.route) return;
             const keys = Object.keys(m.route.methods);
             keys.forEach(o => routes.push({ fullPath: m.route.path, method: o.toUpperCase() }));

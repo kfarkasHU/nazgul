@@ -10,10 +10,7 @@ import { Authorize } from "../../filter";
 
 import { ECHO_API_ENDPOINTS } from "./echo.const";
 
-@HttpController(
-    "echo",
-    ECHO_API_ENDPOINTS.controllerBase
-)
+@HttpController(ECHO_API_ENDPOINTS.controllerBase)
 export class EchoController extends BaseHttpController {
 
     @Authorize("secret")
