@@ -21,7 +21,7 @@ let config = defaultConfig;
 if (existsSync(configPath)) {
     const rawConfig = readFileSync(configPath).toString();
     try {
-        JSON.parse(rawConfig);
+        config = JSON.parse(rawConfig);
     } catch {
         console.warn("There was an error while reading `nazgul.config.json`");
     }
