@@ -1,7 +1,7 @@
 import { FilterAttributeFactory } from "nazgul.hub";
 
 export const Authorize = (token: string) => FilterAttributeFactory.create(
-    (req, res, _next) => {
+    (req, res) => {
         const headers = req.query;
         const header = headers["token"];
         if (!header) {
