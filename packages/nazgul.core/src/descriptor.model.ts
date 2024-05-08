@@ -22,6 +22,7 @@ interface PropertyMap {
 
 export interface ObjectDescriptor extends BaseProperty {
     type: "complex";
+    name: string;
     properties: PropertyMap
 }
 

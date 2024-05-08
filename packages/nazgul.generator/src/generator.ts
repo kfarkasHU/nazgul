@@ -7,6 +7,7 @@ export namespace NazgulGenerator {
         if (!callsite) {
             return {
                 type: "complex",
+                name: "UNKNOWN",
                 properties: {}
             }
         }
@@ -44,6 +45,7 @@ export namespace NazgulGenerator {
             ;
             return {
                 type: "complex",
+                name: ifRef.token.name,
                 properties: props
             }
         }
