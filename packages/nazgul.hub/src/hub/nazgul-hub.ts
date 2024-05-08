@@ -25,9 +25,10 @@ export class NazgulHub {
 
     public static runControllerPlugins<T extends BaseHttpController>(
         path: string,
-        controller: { new (): T }
+        controllerFactory: { new (): T },
+        controllerClassName: string
     ): void {
-        PluginHub.runControllers(path, controller)
+        PluginHub.runControllers(path, controllerFactory, controllerClassName);
     }
 
 }

@@ -1,13 +1,17 @@
-import { BaseHttpController, HttpHandles } from "nazgul.core";
+import { BaseHttpController } from "nazgul.core";
+import { NazgulClassName } from "nazgul.generator";
+import { CallSite } from "typescript-rtti";
 
 import { NazgulHub } from "../hub";
 
 export const HttpController = <T extends BaseHttpController>(
-    path = ""
+    path = "",
+    callsite?: CallSite
 ) => {
     return (
         factory: { new (): T }
     ) => {
-        NazgulHub.runControllerPlugins(path, factory);
+        const className = NazgulClassName.getClassName<T>(factory, callsite);
+        NazgulHub.runControllerPlugins(path, factory, className);
     }
 }

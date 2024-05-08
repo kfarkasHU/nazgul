@@ -10,7 +10,8 @@ export class NazgulRoutingPlugin extends NazgulControllerPlugin {
 
     public onController<T>(
         path: string,
-        factory: { new (): T }
+        factory: { new (): T },
+        _className: string
     ): boolean | Promise<boolean> {
         try {
             const server = HttpContext.getServer();

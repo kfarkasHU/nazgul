@@ -12,10 +12,15 @@ export class PluginHub {
 
     public static runControllers<T extends BaseHttpController>(
         path: string,
-        factory: { new(): T}
+        factory: { new(): T },
+        className: string
     ): void {
         this._plugins.forEach(async m => {
-            const result = await m.onController(path, factory);
+            const result = await m.onController(
+                path,
+                factory,
+                className
+            );
         });
     }
 
