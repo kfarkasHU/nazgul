@@ -9,7 +9,7 @@ import {
 import { exec } from "child_process";
 
 const cwd = process.cwd();
-const configPath = toAbsolute("nazgul.config.json");
+const configPath = toAbsolute(process.argv[2] || "nazgul.config.json");
 const defaultConfig = {
     tsconfigPath: "tsconfig.json",
     entry: 'src/index.ts',
