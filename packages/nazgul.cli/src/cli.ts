@@ -92,7 +92,7 @@ async function buildAndGenerate(): Promise<void> {
 
     const runCommand = `node ${outDirAbsolute}/${configuration.entryDist}`;
     const runner = exec(runCommand, (error, stdout, stderr) => {
-        error && console.log(error);
+        error && !error.killed && console.log(error);
         stdout && console.log(stdout);
         stderr && console.log(stderr);
     });
