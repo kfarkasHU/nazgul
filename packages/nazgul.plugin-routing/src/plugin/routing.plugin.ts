@@ -24,14 +24,14 @@ export class NazgulRoutingPlugin extends NazgulControllerPlugin {
                 const handlePath = `${path}${metadata.path}`;
                 handle(
                     handlePath,
-                    async (req, res, next) => {
+                    async (req, res) => {
                         for (const filter of metadata.filters) {
-                            const result = await filter(req, res, next)
+                            const result = await filter(req, res)
                             if (!result) {
                                 return;
                             }
                         }
-                        handler.apply(instance, [req, res, next])
+                        handler.apply(instance, [req, res])
                     }
                 );
             });

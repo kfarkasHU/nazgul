@@ -1,4 +1,4 @@
-import { NextFunction, Response, Request } from "express";
+import { Response, Request } from "express";
 import { HttpController, HttpGet, ProducesResponse } from "nazgul.hub";
 import { BaseHttpController } from "nazgul.core";
 
@@ -18,8 +18,7 @@ export class HealthController extends BaseHttpController {
     @ProducesResponse<ServerHealthV1Response>(200)
     public health(
         _req: Request,
-        res: Response,
-        _next: NextFunction
+        res: Response
     ): void {
         const result: ServerHealthV1Response = {
             uptime: process.uptime(),

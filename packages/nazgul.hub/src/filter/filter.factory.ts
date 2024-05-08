@@ -1,9 +1,9 @@
 import { BaseHttpController, HttpHandler, INazgulFilterAttribute } from "nazgul.core";
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 
 export class FilterAttributeFactory {
     public static create(
-        handler: (req: Request, res: Response, next: NextFunction) => Promise<boolean> | boolean
+        handler: (req: Request, res: Response) => Promise<boolean> | boolean
     ): INazgulFilterAttribute {
         return <T extends BaseHttpController>(
             target: T,

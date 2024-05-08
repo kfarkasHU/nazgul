@@ -31,8 +31,7 @@ export class MyController {
     @HttpGet("/my-method")
     public async myMethod(
         req: Request,
-        res: Response,
-        next: NextFunction
+        res: Response
     ) {
         // add your custom implementation here
     }
@@ -106,8 +105,7 @@ export class MyController {
     @WithTokenOnly("my-secret-token")
     public async myMethod(
         req: Request,
-        res: Response,
-        next: NextFunction
+        res: Response
     ) {
         // add your custom implementation here
     }

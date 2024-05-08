@@ -2,8 +2,7 @@ import { BaseHttpController } from "nazgul.core";
 import { HttpController, HttpDelete, HttpGet, HttpPost, HttpPut } from "nazgul.hub";
 import {
     Request,
-    Response, 
-    NextFunction
+    Response
 } from "express";
 
 import { Authorize } from "../../filter";
@@ -20,8 +19,7 @@ export class EchoController extends BaseHttpController {
     @HttpGet(ECHO_API_ENDPOINTS.get)
     public echoGet(
         req: Request,
-        res: Response,
-        _next: NextFunction
+        res: Response
     ): void {
         const query = req.query;
         res.status(200).send(query);
@@ -30,8 +28,7 @@ export class EchoController extends BaseHttpController {
     @HttpPost(ECHO_API_ENDPOINTS.get)
     public echoPost(
         req: Request,
-        res: Response,
-        _next: NextFunction
+        res: Response
     ): void {
         const query = req.query;
         res.status(200).send(query);
@@ -40,8 +37,7 @@ export class EchoController extends BaseHttpController {
     @HttpPut(ECHO_API_ENDPOINTS.get)
     public echoPut(
         req: Request,
-        res: Response,
-        _next: NextFunction
+        res: Response
     ): void {
         const query = req.query;
         res.status(200).send(query);
@@ -50,8 +46,7 @@ export class EchoController extends BaseHttpController {
     @HttpDelete(ECHO_API_ENDPOINTS.get)
     public echoDelete(
         req: Request,
-        res: Response,
-        _next: NextFunction
+        res: Response
     ): void {
         const query = req.query;
         res.status(200).send(query);

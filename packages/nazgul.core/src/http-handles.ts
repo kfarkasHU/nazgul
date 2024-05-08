@@ -1,11 +1,11 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response } from "express";
 import { Property } from "./descriptor.model";
 
 export interface HttpHandles<T> {
     [key: string]: HttpHandler<T>
 }
 
-type HttpFilter = (req: Request, res: Response, next: NextFunction) => Promise<boolean> | boolean;
+type HttpFilter = (req: Request, res: Response) => Promise<boolean> | boolean;
 
 export interface HttpHandler<T> {
     path: string;
