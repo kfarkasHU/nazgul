@@ -1,12 +1,14 @@
 import express from "express";
 import { HttpContext, NazgulHub } from "nazgul.hub";
 import { NazgulRoutingPlugin } from "nazgul.plugin-routing";
+import { NazgulSwadocPlugin } from "nazgul.plugin-swadoc";
 
 const server = express()
 
 NazgulHub
     .addServer(server)
     .usePlugin(new NazgulRoutingPlugin())
+    .usePlugin(new NazgulSwadocPlugin("out.json"))
 ;
 
 import "../controller";

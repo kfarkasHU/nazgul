@@ -8,6 +8,7 @@
     "dependencies": {
         "nazgul.hub": "*",
         "nazgul.core": "*",
-        "nazgul.plugin-routing": "*"
+        "nazgul.plugin-routing": "*",
+        "nazgul.plugin-swadoc": "*"
     }
 }
