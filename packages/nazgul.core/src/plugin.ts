@@ -1,5 +1,8 @@
 import { BaseHttpController } from "./http-controller.model";
 
+/**
+ * @public
+ */
 export abstract class NazgulPlugin {
 
     public abstract initialize(): boolean | Promise<boolean>

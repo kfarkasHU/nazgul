@@ -10,6 +10,9 @@ import { Authorize } from "../../filter";
 
 import { ECHO_API_ENDPOINTS } from "./echo.const";
 
+/**
+ * @public
+ */
 @HttpController(ECHO_API_ENDPOINTS.controllerBase)
 export class EchoController extends BaseHttpController {
 

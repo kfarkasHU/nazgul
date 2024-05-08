@@ -5,6 +5,9 @@ import { BaseHttpController } from "nazgul.core";
 import { HEALTH_ENDPOINTS } from "./health.const";
 import { ServerHealthV1Response } from "./health.model";
 
+/**
+ * @public
+ */
 @HttpController(HEALTH_ENDPOINTS.controllerBase)
 export class HealthController extends BaseHttpController {
 

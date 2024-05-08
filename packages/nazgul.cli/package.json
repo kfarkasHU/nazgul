@@ -10,7 +10,7 @@
     "scripts": {
         "build": "ttsc -p tsconfig.build.json"
     },
-    "dependencies": {
-        "nazgul.core": "*"
+    "devDependencies": {
+        "ttsc": "0.3.1"
     }
 }

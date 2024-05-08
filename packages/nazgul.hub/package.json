@@ -15,6 +15,9 @@
         "build": "tsc -p tsconfig.build.json"
     },
     "dependencies": {
-        "nazgul.core": "*"
+        "nazgul.core": "*",
+        "nazgul.generator": "*",
+        "typescript-rtti": "*",
+        "reflect-metadata": "*"
     }
 }
