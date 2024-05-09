@@ -1,6 +1,6 @@
 {
     "name": "nazgul.generator",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -21,9 +21,9 @@
         "nazgul.core": "*"
     },
     "devDependencies": {
-        "typescript-rtti": "0.9.6",
         "reflect-metadata": "0.2.1",
         "ts-patch": "3.1.2",
-        "ttsc": "0.3.1"
+        "ttsc": "0.3.1",
+        "typescript-rtti": "0.9.6"
     }
 }
