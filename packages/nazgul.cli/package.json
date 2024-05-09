@@ -1,6 +1,6 @@
 {
-    "name": "nazgul.cli",
-    "version": "1.0.0",
+    "name": "nazgul.cli-evo",
+    "version": "1.0.2",
     "license": "MIT",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
@@ -8,6 +8,7 @@
         "nazgul": "./bin/cli.js"
     },
     "scripts": {
+        "prepublish": "yarn build",
         "build": "ttsc -p tsconfig.build.json"
     },
     "devDependencies": {
