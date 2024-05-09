@@ -1,6 +1,6 @@
 {
     "name": "nazgul.hub",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "module": "./dist/esm/index.js",
     "types": "./dist/esm/index.d.ts",
@@ -17,7 +17,7 @@
     "dependencies": {
         "nazgul.core": "*",
         "nazgul.generator": "*",
-        "typescript-rtti": "*",
-        "reflect-metadata": "*"
+        "reflect-metadata": "*",
+        "typescript-rtti": "*"
     }
 }
